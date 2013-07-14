@@ -25,7 +25,6 @@ public class Rugzak {
 
     tabel = new TableView<>(lijst);
     
-    
     TableColumn k = new TableColumn("Rugzak");
     
     k.setCellValueFactory( new PropertyValueFactory<Item,Image>("Image"));
