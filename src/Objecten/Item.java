@@ -18,7 +18,7 @@ public class Item  extends Figureke{
    private double width;
    private Shape shape;
    private String afbeelding;
-   private Image image;
+   private static Image image;
 
     public String getAfbeelding() {
         return afbeelding;

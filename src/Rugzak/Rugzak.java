@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 
 /**
  *
@@ -25,15 +26,17 @@ public class Rugzak {
     tabel = new TableView<>(lijst);
     
     
-    TableColumn k = new TableColumn();
-    k.setCellValueFactory( new PropertyValueFactory<Item,String>("afbeelding"));
+    TableColumn k = new TableColumn("Rugzak");
     
-//    ItemImageCellFactory cf = new ItemImageCellFactory();
-//    k.setCellFactory(cf);
+    k.setCellValueFactory( new PropertyValueFactory<Item,Image>("Image"));
     
+    ItemImageCellFactory cf = new ItemImageCellFactory();
+    k.setCellFactory(cf);
+    k.setEditable(false);
+    k.setMinWidth(75);
     tabel.getColumns().add(k);
 
-    
+    tabel.setMaxWidth(80);
     tabel.setTranslateX(500);
     tabel.setTranslateY(50);
     
