@@ -8,19 +8,31 @@ import Objecten.Item;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  *
  * @author Ellen
  */
 public class Rugzak {
-    private ListView<Item> tabel;
+    private TableView<Item> tabel;
     private final ObservableList<Item> lijst = FXCollections.observableArrayList();
 
     public Rugzak() {
 
-    tabel = new ListView<>(lijst);
+    tabel = new TableView<>(lijst);
+    
+    
+    TableColumn k = new TableColumn();
+    k.setCellValueFactory( new PropertyValueFactory<Item,String>("afbeelding"));
+    
+//    ItemImageCellFactory cf = new ItemImageCellFactory();
+//    k.setCellFactory(cf);
+    
+    tabel.getColumns().add(k);
+
     
     tabel.setTranslateX(500);
     tabel.setTranslateY(50);
