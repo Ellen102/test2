@@ -56,5 +56,11 @@ public class Item  extends Figureke{
     public void doAction(Label label, ObjectenOpslag opslag, Rugzak rz) {
         label.setText("je vond " + getName());
         opslag.verwijder(this);
+        rz.add(this);
+    }
+    
+   @Override
+    public String toString(){
+        return getName();
     }
 }

@@ -21,6 +21,7 @@ public class Rugzak {
     public Rugzak() {
 
     tabel = new ListView<>(lijst);
+    
     tabel.setTranslateX(500);
     tabel.setTranslateY(50);
     
