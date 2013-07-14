@@ -1,5 +1,6 @@
 package Objecten;
 
+import Rugzak.Rugzak;
 import Wereld.ObjectenOpslag;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
@@ -84,5 +85,8 @@ public abstract class Figureke {
      */
     
     public abstract boolean hasAction();
-    public abstract void doAction(Label label, ObjectenOpslag opslag);
+    /*
+     * todo: misschien een klasse voor maken
+     */
+    public abstract void doAction(Label label, ObjectenOpslag opslag, Rugzak rz);
 }

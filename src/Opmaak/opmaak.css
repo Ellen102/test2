@@ -18,3 +18,10 @@ root {
     -fx-background-color:  #ccccff;
 
 }
+
+.ListView{
+    /* :/
+    -fx-translate-x: 500;
+    -fx-translate-y: 500; 
+    */
+}

@@ -1,5 +1,6 @@
 package Objecten;
 
+import Rugzak.Rugzak;
 import Wereld.ObjectenOpslag;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
@@ -53,7 +54,7 @@ public class Building extends Figureke{
     }
 
     @Override
-    public void doAction(Label label, ObjectenOpslag opslag) {
+    public void doAction(Label label, ObjectenOpslag opslag, Rugzak rz) {
         throw new RuntimeException("geen actie");
     }
 

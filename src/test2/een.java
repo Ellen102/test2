@@ -3,6 +3,7 @@ package test2;
 import Objecten.BoringPerson;
 import Objecten.Item;
 import Objecten.Me;
+import Rugzak.Rugzak;
 import Wereld.ObjectenOpslag;
 import java.util.HashMap;
 import javafx.application.Application;
@@ -34,6 +35,7 @@ public class een extends Application {
     private static ObjectenOpslag opslag; 
     private static Me me;
     private static Label label;
+    private static Rugzak rz;
     
     static {
         dX = new HashMap<>();
@@ -66,11 +68,9 @@ public class een extends Application {
         
         
         
-        ListView<Item> tabel = new ListView<>();
-        tabel.setTranslateX(500);
-        tabel.setTranslateY(500);
+        rz = new Rugzak();
        
-        root.getChildren().add(tabel);
+        root.getChildren().add(rz.getTabel());
         
         
         
@@ -84,7 +84,7 @@ public class een extends Application {
         primaryStage.setScene(new Scene(root));
         // waarom???? :(
         //primaryStage.getScene()
-                tabel.setOnKeyPressed(new EventHandler<KeyEvent>(){
+                rz.getTabel().setOnKeyPressed(new EventHandler<KeyEvent>(){
 
             @Override
             public void handle(KeyEvent t) {
@@ -101,11 +101,11 @@ public class een extends Application {
                 }else if(t.getCode() == KeyCode.SPACE){
                     BoringPerson b = opslag.hitBoringPerson(me.getX(),me.getY());
                     if(b != null){
-                        b.doAction(label, opslag);
+                        b.doAction(label, opslag, rz);
                     }else{
                         Item i = opslag.onItem(me.getX(), me.getY());
                         if(i != null){
-                            i.doAction(label, opslag);
+                            i.doAction(label, opslag, rz);
                         }
                     }
                 }

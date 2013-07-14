@@ -1,5 +1,6 @@
 package Objecten;
 
+import Rugzak.Rugzak;
 import Wereld.ObjectenOpslag;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
@@ -52,7 +53,7 @@ public class BoringPerson extends Figureke{
     }
 
     @Override
-    public void doAction(Label label, ObjectenOpslag opslag) {
+    public void doAction(Label label, ObjectenOpslag opslag, Rugzak rz) {
         label.setText(zin);
     }
     
