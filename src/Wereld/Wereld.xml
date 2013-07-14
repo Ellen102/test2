@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<wereld>
+    <buildings>
+        <building name="gebouw1">
+            <x>20</x>
+            <y>50</y>
+            <width>70</width>
+            <height>125</height>
+        </building>
+        <building name="gebouw2">
+            <x>50</x>
+            <y>20</y>
+            <width>40</width>
+            <height>99</height>
+        </building>
+        <building name="gebouw3">
+            <x>100</x>
+            <y>100</y>
+            <width>50</width>
+            <height>50</height>
+        </building>
+        <building name="gebouw4">
+            <x>200</x>
+            <y>200</y>
+            <width>100</width>
+            <height>100</height>
+        </building>
+    </buildings>
+    <persons>
+        <person name="jantje">
+            <x>20</x>
+            <y>20</y>
+            <radius>10</radius>
+            <zin>yolo</zin>
+        </person>
+        <person name="iemand">
+            <x>190</x>
+            <y>190</y>
+            <radius>10</radius>
+            <zin>hallo!</zin>
+        </person>
+    </persons>
+    <items>
+        <item name="klavertje">
+            <x>170</x>
+            <y>170</y>
+            <width>5</width>
+            <height>5</height>
+        </item>
+         <item name="klavertje">
+            <x>160</x>
+            <y>160</y>
+            <width>5</width>
+            <height>5</height>
+        </item>
+    </items>
+</wereld>
