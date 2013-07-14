@@ -11,6 +11,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -63,10 +64,16 @@ public class een extends Application {
         root.getChildren().add(label);
         
         
-        TableView tabel = new TableView();
+        
+        
+        ListView<Item> tabel = new ListView<>();
         tabel.setTranslateX(500);
         tabel.setTranslateY(500);
+       
         root.getChildren().add(tabel);
+        
+        
+        
         
         
         me = new Me(5.0, 10.0);
@@ -75,9 +82,9 @@ public class een extends Application {
         root.getStylesheets().add("Opmaak/opmaak.css");
         
         primaryStage.setScene(new Scene(root));
-        
-        
-        primaryStage.getScene().setOnKeyPressed(new EventHandler<KeyEvent>(){
+        // waarom???? :(
+        //primaryStage.getScene()
+                tabel.setOnKeyPressed(new EventHandler<KeyEvent>(){
 
             @Override
             public void handle(KeyEvent t) {
