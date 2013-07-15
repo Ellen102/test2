@@ -1,8 +1,5 @@
 package Objecten;
 
-import Rugzak.Rugzak;
-import Wereld.ObjectenOpslag;
-import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;

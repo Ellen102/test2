@@ -1,4 +1,3 @@
-
 package Objecten;
 
 import javafx.scene.image.Image;

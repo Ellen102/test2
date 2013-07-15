@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package test2;
 
 import Objecten.BoringPerson;
@@ -95,6 +91,10 @@ public class Test2 extends Application {
                     }
                     label.setText(null);
                 }else if(t.getCode() == KeyCode.SPACE){
+                    /*
+                     * te verplaatsen + opruimen
+                     */
+                            
                     BoringPerson b = opslag.hitBoringPerson(me.getX(),me.getY());
                     if(b != null){
                         b.doAction(ab);
