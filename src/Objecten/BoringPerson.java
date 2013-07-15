@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
+import test2.ActionBenodigdheden;
 
 /**
  *
@@ -53,8 +54,8 @@ public class BoringPerson extends Figureke{
     }
 
     @Override
-    public void doAction(Label label, ObjectenOpslag opslag, Rugzak rz) {
-        label.setText(zin);
+    public void doAction(ActionBenodigdheden ab) {
+        ab.getLabel().setText(zin);
     }
     
 }

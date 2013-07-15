@@ -12,8 +12,6 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
@@ -36,6 +34,7 @@ public class een extends Application {
     private static Me me;
     private static Label label;
     private static Rugzak rz;
+    private static ActionBenodigdheden ab;
     
     static {
         dX = new HashMap<>();
@@ -66,13 +65,10 @@ public class een extends Application {
         root.getChildren().add(label);
         
         
-        
-        
         rz = new Rugzak();
-       
         root.getChildren().add(rz.getTabel());
         
-        
+        ab = new ActionBenodigdheden(label, opslag, rz);
         
         
         
@@ -101,11 +97,11 @@ public class een extends Application {
                 }else if(t.getCode() == KeyCode.SPACE){
                     BoringPerson b = opslag.hitBoringPerson(me.getX(),me.getY());
                     if(b != null){
-                        b.doAction(label, opslag, rz);
+                        b.doAction(ab);
                     }else{
                         Item i = opslag.onItem(me.getX(), me.getY());
                         if(i != null){
-                            i.doAction(label, opslag, rz);
+                            i.doAction(ab);
                         }
                     }
                 }

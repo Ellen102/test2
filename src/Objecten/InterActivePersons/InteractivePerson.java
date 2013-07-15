@@ -10,6 +10,7 @@ import Wereld.ObjectenOpslag;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
+import test2.ActionBenodigdheden;
 
 /**
  *
@@ -29,7 +30,7 @@ public abstract class InteractivePerson extends BoringPerson{
     }
 
     @Override
-    public abstract void doAction(Label label, ObjectenOpslag opslag, Rugzak rz);
+    public abstract void doAction(ActionBenodigdheden ab) ;
     
 }
 

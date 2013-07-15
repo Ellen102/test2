@@ -4,11 +4,9 @@
  */
 package Objecten.InterActivePersons;
 
-import Rugzak.Rugzak;
-import Wereld.ObjectenOpslag;
-import javafx.scene.control.Label;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import test2.ActionBenodigdheden;
 
 /**
  *
@@ -60,12 +58,13 @@ public class ContainsPerson extends InteractivePerson{
     
     
     @Override
-    public void doAction(Label label, ObjectenOpslag opslag, Rugzak rz) {
-
+    public void doAction(ActionBenodigdheden ab) {
+        
+        
         /*
          * WAAROM KOMT DE TEKST ER NI OP :(
          */
-        label.setText(hello);
+        ab.getLabel().setText(hello);
         
         /*
          * wacht om de tekst te lezen
@@ -79,10 +78,10 @@ public class ContainsPerson extends InteractivePerson{
         while (t1-t0<1000);
         
                 
-        if(rz.remove(idItem)){
-            label.setText(yes);
+        if(ab.getRugzak().remove(idItem)){
+            ab.getLabel().setText(yes);
         }else{
-            label.setText(no);
+            ab.getLabel().setText(no);
         }
         
     }

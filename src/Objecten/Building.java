@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
+import test2.ActionBenodigdheden;
 
 /**
  *
@@ -54,7 +55,7 @@ public class Building extends Figureke{
     }
 
     @Override
-    public void doAction(Label label, ObjectenOpslag opslag, Rugzak rz) {
+    public void doAction(ActionBenodigdheden ab) {
         throw new RuntimeException("geen actie");
     }
 

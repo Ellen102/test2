@@ -9,6 +9,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javax.xml.bind.annotation.XmlAttribute;
+import test2.ActionBenodigdheden;
 
 /**
  *
@@ -78,10 +79,10 @@ public class Item  extends Figureke{
     }
 
     @Override
-    public void doAction(Label label, ObjectenOpslag opslag, Rugzak rz) {
-        label.setText("je vond " + getName());
-        opslag.verwijder(this);
-        rz.add(this);
+    public void doAction(ActionBenodigdheden ab) {
+        ab.getLabel().setText("je vond " + getName());
+        ab.getObjectenOpslag().verwijder(this);
+        ab.getRugzak().add(this);
     }
     
    @Override

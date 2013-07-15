@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
 import javax.xml.bind.annotation.XmlAttribute;
+import test2.ActionBenodigdheden;
 
 /**
  *
@@ -88,5 +89,5 @@ public abstract class Figureke {
     /*
      * todo: misschien een klasse voor maken
      */
-    public abstract void doAction(Label label, ObjectenOpslag opslag, Rugzak rz);
+    public abstract void doAction(ActionBenodigdheden ab);
 }
