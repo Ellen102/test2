@@ -29,29 +29,34 @@
             <height>100</height>
         </building>
     </buildings>
-    <persons>
-        <person name="jantje">
+    <containspersons>
+        <containsperson name="jantje">
             <x>20</x>
             <y>20</y>
             <radius>10</radius>
-            <zin>yolo</zin>
-        </person>
-        <person name="iemand">
+            <hello>Hallo! ik ben Jantje, heb je een klavertje voor mij?</hello>
+            <yes>jeeej!</yes>
+            <no>ween :( wil je er eentje voor mij zoeken?</no>
+            <itemid>1</itemid>
+        </containsperson>
+    </containspersons>
+    <boringpersons>
+        <boringperson name="iemand">
             <x>190</x>
             <y>190</y>
             <radius>10</radius>
-            <zin>hallo!</zin>
-        </person>
-    </persons>
+            <zin>yolo</zin>
+        </boringperson>
+    </boringpersons>
     <items>
-        <item name="klavertje">
+        <item name="klavertje" id="1">
             <x>170</x>
             <y>170</y>
             <width>5</width>
             <height>5</height>
             <afbeelding>Image/spklavertje.png</afbeelding>
         </item>
-         <item name="klavertje">
+         <item name="klavertje" id="1">
             <x>160</x>
             <y>160</y>
             <width>5</width>

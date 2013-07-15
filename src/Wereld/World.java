@@ -2,6 +2,7 @@ package Wereld;
 
 import Objecten.BoringPerson;
 import Objecten.Building;
+import Objecten.InterActivePersons.ContainsPerson;
 import Objecten.Item;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
@@ -18,6 +19,7 @@ public class World {
     
     private List<Building> buildings;
     private List<BoringPerson> persons;
+    private List<ContainsPerson> containspersons;
     private List<Item> items;
     
     
@@ -33,14 +35,25 @@ public class World {
 
     
     
-    @XmlElementWrapper (name = "persons")
-    @XmlElement (name = "person")
+    @XmlElementWrapper (name = "boringpersons")
+    @XmlElement (name = "boringperson")
     public List<BoringPerson> getPersons() {
         return persons;
     }
 
     public void setPersons(List<BoringPerson> persons) {
         this.persons = persons;
+    }
+
+    
+    @XmlElementWrapper (name = "containspersons")
+    @XmlElement (name = "containsperson")
+    public List<ContainsPerson> getContainsPersons() {
+        return containspersons;
+    }
+
+    public void setContainsPersons(List<ContainsPerson> p) {
+        this.containspersons = p;
     }
 
     

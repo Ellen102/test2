@@ -5,6 +5,7 @@
 package Rugzak;
 
 import Objecten.Item;
+import java.util.Iterator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
@@ -51,12 +52,36 @@ public class Rugzak {
         lijst.add(i);
     }
     
-    public void remove(Item i){
-        lijst.remove(i);
+    public boolean remove(Item i){
+        return lijst.remove(i);
     }
     
     public Item getSelected(){
         int i = tabel.getSelectionModel().getSelectedIndex();
         return lijst.get(i);
+    }
+    
+    public boolean contains(Item i){
+        return  lijst.contains(i);
+    }
+    
+    public boolean contains(int id){
+        for(Item i: lijst){
+            if(i.getId() == id){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean remove(int id){
+        Iterator<Item> it = lijst.iterator();
+        while(it.hasNext()){
+            if(it.next().getId() == id){
+                it.remove();
+                return true;
+            }
+        }
+        return false;
     }
 }

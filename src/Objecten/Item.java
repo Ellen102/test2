@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
+import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  *
@@ -19,6 +20,9 @@ public class Item  extends Figureke{
    private Shape shape;
    private String afbeelding;
    private static Image image;
+   private int id;
+
+
 
     public String getAfbeelding() {
         return afbeelding;
@@ -82,6 +86,21 @@ public class Item  extends Figureke{
     
    @Override
     public String toString(){
-        return getName();
+        return getName() + id;
+    }
+   
+   
+   /*
+    * id waaraan het item herkend kan worden
+    * 
+    */
+    @XmlAttribute(name = "id")
+    public int getId() {
+        return id;
+    }
+
+       
+    public void setId(int id) {
+        this.id = id;
     }
 }

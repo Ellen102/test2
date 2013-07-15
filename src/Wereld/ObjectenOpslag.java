@@ -6,6 +6,7 @@ package Wereld;
 
 import Objecten.BoringPerson;
 import Objecten.Building;
+import Objecten.InterActivePersons.ContainsPerson;
 import Objecten.Item;
 import java.util.List;
 import javafx.collections.FXCollections;
@@ -49,15 +50,26 @@ public class ObjectenOpslag {
            children.add(b.getShape());
         }
         
+        /*
+         * persons
+         */
         for(BoringPerson b : w.getPersons()){
             persons.add(b);
             children.add(b.getShape());
         }
         
+        for(ContainsPerson b : w.getContainsPersons()){
+            persons.add(b);
+            children.add(b.getShape());
+        }
+        
+        
+        
         for(Item b : w.getItems()){
             items.add(b);
             children.add(b.getShape());
         }
+        
 
     }
 
