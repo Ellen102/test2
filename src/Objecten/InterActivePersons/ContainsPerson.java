@@ -20,7 +20,9 @@ public class ContainsPerson extends InteractivePerson{
     private String yes;
     private String no;
     private int idItem;
-
+ 
+    
+    @XmlElement (name = "hello")
     public String getHello() {
         return hello;
     }
@@ -28,7 +30,9 @@ public class ContainsPerson extends InteractivePerson{
     public void setHello(String hello) {
         this.hello = hello;
     }
-
+    
+    
+    @XmlElement (name = "hello")
     public String getYes() {
         return yes;
     }
@@ -57,17 +61,24 @@ public class ContainsPerson extends InteractivePerson{
     
     @Override
     public void doAction(Label label, ObjectenOpslag opslag, Rugzak rz) {
-        System.out.println("start");
+
+        /*
+         * WAAROM KOMT DE TEKST ER NI OP :(
+         */
         label.setText(hello);
         
         /*
          * wacht om de tekst te lezen
          */
         
+        long t0,t1;
+        t0=System.currentTimeMillis();
+        do{
+            t1=System.currentTimeMillis();
+        }
+        while (t1-t0<1000);
         
-        
-        System.out.println(idItem);
-        
+                
         if(rz.remove(idItem)){
             label.setText(yes);
         }else{
