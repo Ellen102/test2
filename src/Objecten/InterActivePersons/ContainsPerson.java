@@ -4,6 +4,12 @@
  */
 package Objecten.InterActivePersons;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.util.Duration;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import test2.ActionBenodigdheden;
@@ -30,7 +36,7 @@ public class ContainsPerson extends InteractivePerson{
     }
     
     
-    @XmlElement (name = "hello")
+    @XmlElement (name = "yes")
     public String getYes() {
         return yes;
     }
@@ -58,32 +64,39 @@ public class ContainsPerson extends InteractivePerson{
     
     
     @Override
-    public void doAction(ActionBenodigdheden ab) {
+    public void doAction(final ActionBenodigdheden ab) {
+        Timeline timeline = new Timeline();
         
         
-        /*
-         * WAAROM KOMT DE TEKST ER NI OP :(
-         */
-        ab.getLabel().setText(hello);
-        
-        /*
-         * wacht om de tekst te lezen
-         */
-        
-        long t0,t1;
-        t0=System.currentTimeMillis();
-        do{
-            t1=System.currentTimeMillis();
-        }
-        while (t1-t0<1000);
-        
+        timeline.getKeyFrames().addAll(
+                new KeyFrame(Duration.seconds(0),
+                  new EventHandler() {
+                         @Override
+                          public void handle(Event event) {
+                                ab.getLabel().setText(hello);
+                         }
+                }),
+                new KeyFrame(Duration.seconds(1),
+                  new EventHandler() {
+                         @Override
+                          public void handle(Event event) {
+                             if(ab.getRugzak().remove(idItem)){
+                                    ab.getLabel().setText(yes);
+                             }else{
+                                   ab.getLabel().setText(no);
+                             }
+                             
+                             
+                         }
+                })
                 
-        if(ab.getRugzak().remove(idItem)){
-            ab.getLabel().setText(yes);
-        }else{
-            ab.getLabel().setText(no);
-        }
+                
+                
+                
+                );
+         timeline.playFromStart();
         
+      
     }
     
 }

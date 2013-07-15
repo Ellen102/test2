@@ -1,9 +1,6 @@
 
 package Objecten;
 
-import Rugzak.Rugzak;
-import Wereld.ObjectenOpslag;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -20,8 +17,9 @@ public class Item  extends Figureke{
    private double width;
    private Shape shape;
    private String afbeelding;
-   private static Image image;
+   private Image image;
    private int id;
+   private String color;
 
 
 
@@ -38,6 +36,15 @@ public class Item  extends Figureke{
             image = new Image(afbeelding);
         }
         return image;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+        setFill(Color.valueOf(color));
     }
 
 

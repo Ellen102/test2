@@ -41,11 +41,11 @@
         </containsperson>
     </containspersons>
     <boringpersons>
-        <boringperson name="iemand">
+        <boringperson name="Jane">
             <x>190</x>
             <y>190</y>
             <radius>10</radius>
-            <zin>yolo</zin>
+            <zin>Ik verveel me :( </zin>
         </boringperson>
     </boringpersons>
     <items>
@@ -55,6 +55,7 @@
             <width>5</width>
             <height>5</height>
             <afbeelding>Image/spklavertje.png</afbeelding>
+            <color>green</color>
         </item>
          <item name="klavertje" id="1">
             <x>160</x>
@@ -62,6 +63,15 @@
             <width>5</width>
             <height>5</height>
             <afbeelding>Image/spklavertje.png</afbeelding>
+            <color>green</color>
+        </item>
+        <item name="roos" id="2">
+            <x>100</x>
+            <y>300</y>
+            <width>5</width>
+            <height>5</height>
+            <afbeelding>Image/rose.png</afbeelding>
+            <color>red</color>
         </item>
     </items>
 </wereld>
