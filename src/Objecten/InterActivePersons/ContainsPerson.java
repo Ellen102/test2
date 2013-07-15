@@ -8,11 +8,13 @@ import Rugzak.Rugzak;
 import Wereld.ObjectenOpslag;
 import javafx.scene.control.Label;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Ellen
  */
+@XmlRootElement(name="containsperson")
 public class ContainsPerson extends InteractivePerson{
     private String hello;
     private String yes;
@@ -55,14 +57,14 @@ public class ContainsPerson extends InteractivePerson{
     
     @Override
     public void doAction(Label label, ObjectenOpslag opslag, Rugzak rz) {
+        System.out.println("start");
         label.setText(hello);
-        try {
-            System.out.println("sleep");
-            Thread.sleep(100);
-            System.out.println("wakker");
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
+        
+        /*
+         * wacht om de tekst te lezen
+         */
+        
+        
         
         System.out.println(idItem);
         

@@ -37,7 +37,7 @@
             <hello>Hallo! ik ben Jantje, heb je een klavertje voor mij?</hello>
             <yes>jeeej!</yes>
             <no>ween :( wil je er eentje voor mij zoeken?</no>
-            <itemid>1</itemid>
+            <iditem>1</iditem>
         </containsperson>
     </containspersons>
     <boringpersons>
