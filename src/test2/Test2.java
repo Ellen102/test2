@@ -1,6 +1,6 @@
 package test2;
 
-import Objecten.BoringPerson;
+import Objecten.InterActivePersons.Person;
 import Objecten.Item;
 import Objecten.Me;
 import Rugzak.Rugzak;
@@ -95,7 +95,7 @@ public class Test2 extends Application {
                      * te verplaatsen + opruimen
                      */
                             
-                    BoringPerson b = opslag.hitBoringPerson(me.getX(),me.getY());
+                    Person b = opslag.hitBoringPerson(me.getX(),me.getY());
                     if(b != null){
                         b.doAction(ab);
                     }else{

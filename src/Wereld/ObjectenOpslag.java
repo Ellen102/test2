@@ -3,6 +3,7 @@ package Wereld;
 import Objecten.BoringPerson;
 import Objecten.Building;
 import Objecten.InterActivePersons.ContainsPerson;
+import Objecten.InterActivePersons.Person;
 import Objecten.Item;
 import java.util.List;
 import javafx.collections.FXCollections;
@@ -25,7 +26,7 @@ public class ObjectenOpslag {
     private List children;
     
     private final ObservableList<Building> buildings = FXCollections.observableArrayList();
-    private final ObservableList<BoringPerson> persons = FXCollections.observableArrayList();
+    private final ObservableList<Person> persons = FXCollections.observableArrayList();
     private final ObservableList<Item> items = FXCollections.observableArrayList();
 
     public ObjectenOpslag(Group root) {
@@ -71,7 +72,7 @@ public class ObjectenOpslag {
         return buildings;
     }
 
-    public ObservableList<BoringPerson> getPersons() {
+    public ObservableList<Person> getPersons() {
         return persons;
     }
 
@@ -97,8 +98,8 @@ public class ObjectenOpslag {
         
     }
     
-    public BoringPerson hitBoringPerson(double nx, double ny){
-        for (BoringPerson p : persons){
+    public Person hitBoringPerson(double nx, double ny){
+        for (Person p : persons){
             Circle c = (Circle) p.getShape();
             if(c.getCenterX()+2*c.getRadius()>nx && c.getCenterX()-2*c.getRadius()<nx
                     &&

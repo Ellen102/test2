@@ -1,5 +1,6 @@
 package Objecten;
 
+import Objecten.InterActivePersons.Person;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
@@ -9,33 +10,13 @@ import test2.ActionBenodigdheden;
  *
  * @author Ellen
  */
-public class BoringPerson extends Figureke{
+public class BoringPerson extends Person {
     private String zin;
-    private double radius;
-    private Shape shape;
 
-    public BoringPerson() {
-    super.setFill(Color.BLUE);
-    }
-
-    
-    
-    public double getRadius() {
-        return radius;
-    }
-
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
    
-   @Override
-   public Shape getShape() {
-        if(shape == null){
-            shape = new Circle(getX(), getY(), radius);
-            shape.setFill(getFill());
-        }
-        return shape;
-    }
+   /*
+    * todo: array van maken met meerdere zinnen die er om de beurt op kopen
+    */
     public String getZin() {
         return zin;
     }
