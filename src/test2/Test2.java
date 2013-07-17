@@ -1,8 +1,7 @@
 package test2;
 
-import Objecten.InterActivePersons.Person;
-import Objecten.Item;
 import Objecten.Me;
+import Objecten.Spatiebaar;
 import Rugzak.Rugzak;
 import Wereld.ObjectenOpslag;
 import java.util.HashMap;
@@ -95,14 +94,9 @@ public class Test2 extends Application {
                      * te verplaatsen + opruimen
                      */
                             
-                    Person b = opslag.hitBoringPerson(me.getX(),me.getY());
-                    if(b != null){
+                    Spatiebaar b = opslag.onSpatiebaarDing(me.getX(),me.getY());
+                    if(b != null && b.hasAction()){
                         b.doAction(ab);
-                    }else{
-                        Item i = opslag.onItem(me.getX(), me.getY());
-                        if(i != null){
-                            i.doAction(ab);
-                        }
                     }
                 }
                 
