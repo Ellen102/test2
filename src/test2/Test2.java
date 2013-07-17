@@ -61,7 +61,7 @@ public class Test2 extends Application {
         
         
         rz = new Rugzak();
-        root.getChildren().add(rz.getTabel());
+        root.getChildren().add(rz);
         
         ab = new ActionBenodigdheden(label, opslag, rz);
         

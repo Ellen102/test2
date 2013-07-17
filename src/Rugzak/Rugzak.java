@@ -9,12 +9,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 
 /**
  *
  * @author Ellen
  */
-public class Rugzak {
+public class Rugzak extends HBox{
     private TableView<Item> tabel;
     private final ObservableList<Item> lijst = FXCollections.observableArrayList();
 
@@ -35,6 +36,9 @@ public class Rugzak {
     tabel.setMaxWidth(80);
     tabel.setTranslateX(500);
     tabel.setTranslateY(50);
+    
+    
+    this.getChildren().add(tabel);
     
     }
     
