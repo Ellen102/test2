@@ -110,4 +110,14 @@ public class Item  extends Figureke{
     public void setId(int id) {
         this.id = id;
     }
+    
+    public boolean hit(double nx, double ny){
+        if(getX()== nx
+                    &&
+               getY() == ny
+                    ){
+                return true;
+            }
+        return false;
+    }
 }

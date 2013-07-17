@@ -100,11 +100,7 @@ public class ObjectenOpslag {
     
     public Person hitBoringPerson(double nx, double ny){
         for (Person p : persons){
-            Circle c = (Circle) p.getShape();
-            if(c.getCenterX()+2*c.getRadius()>nx && c.getCenterX()-2*c.getRadius()<nx
-                    &&
-               c.getCenterY()+2*c.getRadius()>ny && c.getCenterY()-2*c.getRadius()<ny 
-                    ){
+            if(p.hit(nx, ny) ){
                 return p;
             }
         }
@@ -113,10 +109,7 @@ public class ObjectenOpslag {
     
      public Item onItem(double nx, double ny){
         for (Item s : items){
-            if(s.getX()== nx
-                    &&
-               s.getY() == ny
-                    ){
+            if(s.hit(nx, ny)){
                 return s;
             }
         }

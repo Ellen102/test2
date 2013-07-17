@@ -39,5 +39,15 @@ public abstract class Person extends Figureke{
         this.radius = radius;
     }
     
+    public boolean hit(double nx, double ny){
+        if(getX()+2*getRadius()>nx && getX()-2*getRadius()<nx
+                    &&
+               getY()+2*getRadius()>ny && getY()-2*getRadius()<ny 
+                    ){
+                return true;
+            }
+        return false;
+    }
+    
     
 }
