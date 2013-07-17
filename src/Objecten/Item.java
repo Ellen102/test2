@@ -1,5 +1,6 @@
 package Objecten;
 
+import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -20,8 +21,13 @@ public class Item  extends Spatiebaar{
    private int id;
    private String color;
 
+   public Item() {
+       super.setFill(Color.GREEN);
+    }
 
-
+   /*
+    * voor tabel (mommenteel)
+    */
     public String getAfbeelding() {
         return afbeelding;
     }
@@ -37,6 +43,17 @@ public class Item  extends Spatiebaar{
         return image;
     }
 
+    
+    
+    /*
+     * figuur
+     */
+    @Override
+    public Node getNode() {
+       return getShape();
+   }
+    
+    
     public String getColor() {
         return color;
     }
@@ -44,13 +61,6 @@ public class Item  extends Spatiebaar{
     public void setColor(String color) {
         this.color = color;
         setFill(Color.valueOf(color));
-    }
-
-
-   
-
-    public Item() {
-       super.setFill(Color.GREEN);
     }
    
    @Override
@@ -61,6 +71,8 @@ public class Item  extends Spatiebaar{
         }
         return shape;
     }
+    
+
     
    public double getHeight() {
         return height;
@@ -76,19 +88,6 @@ public class Item  extends Spatiebaar{
 
     public void setWidth(double width) {
         this.width = width;
-    }
-    
-    
-    @Override
-    public boolean hasAction() {
-        return true;
-    }
-
-    @Override
-    public void doAction(ActionBenodigdheden ab) {
-        ab.getLabel().setText("je vond " + getName());
-        ab.getObjectenOpslag().verwijder(this);
-        ab.getRugzak().add(this);
     }
     
    @Override
@@ -111,6 +110,12 @@ public class Item  extends Spatiebaar{
         this.id = id;
     }
     
+    
+    
+    
+    /*
+     * spatiebaar
+     */
     public boolean hit(double nx, double ny){
         if(getX()== nx
                     &&
@@ -120,4 +125,20 @@ public class Item  extends Spatiebaar{
             }
         return false;
     }
+
+    @Override
+    public boolean hasAction() {
+        return true;
+    }
+
+    @Override
+    public void doAction(ActionBenodigdheden ab) {
+        ab.getLabel().setText("je vond " + getName());
+        /*
+         * verplaatsen
+         */
+        ab.getObjectenOpslag().verwijder(this);
+        ab.getRugzak().add(this);
+    }
+
 }

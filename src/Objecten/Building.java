@@ -1,5 +1,6 @@
 package Objecten;
 
+import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
@@ -46,7 +47,18 @@ public class Building extends Figureke{
         this.width = width;
     }
 
+    @Override
+    public Node getNode() {
+        return getShape();
+    }
 
+    public boolean erTegen(double nx, double ny){
+         if (nx <= getX()+getWidth() && nx >= getX() 
+                    && ny <= getY()+getHeight() && ny >= getY()){
+                return true;
+            }
+         return false;
+    }
 
 
 }

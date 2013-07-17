@@ -90,10 +90,7 @@ public class Test2 extends Application {
                     }
                     label.setText(null);
                 }else if(t.getCode() == KeyCode.SPACE){
-                    /*
-                     * te verplaatsen + opruimen
-                     */
-                            
+                    
                     Spatiebaar b = opslag.onSpatiebaarDing(me.getX(),me.getY());
                     if(b != null && b.hasAction()){
                         b.doAction(ab);

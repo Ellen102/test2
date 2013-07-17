@@ -26,8 +26,6 @@ public class ObjectenOpslag {
     private List children;
     
     private final ObservableList<Building> buildings = FXCollections.observableArrayList();
-//    private final ObservableList<Person> persons = FXCollections.observableArrayList();
-//    private final ObservableList<Item> items = FXCollections.observableArrayList();
     private final ObservableList<Spatiebaar> spatiesdingen = FXCollections.observableArrayList();
 
     public ObjectenOpslag(Group root) {
@@ -43,7 +41,7 @@ public class ObjectenOpslag {
         
         for(Building b : w.getBuildings()){
            buildings.add(b);
-           children.add(b.getShape());
+           children.add(b.getNode());
         }
         
         /*
@@ -51,19 +49,19 @@ public class ObjectenOpslag {
          */
         for(BoringPerson b : w.getPersons()){
             spatiesdingen.add(b);
-            children.add(b.getShape());
+            children.add(b.getNode());
         }
         
         for(ContainsPerson b : w.getContainsPersons()){
             spatiesdingen.add(b);
-            children.add(b.getShape());
+            children.add(b.getNode());
         }
         
         
         
         for(Item b : w.getItems()){
             spatiesdingen.add(b);
-            children.add(b.getShape());
+            children.add(b.getNode());
         }
         
 
@@ -73,24 +71,20 @@ public class ObjectenOpslag {
         return buildings;
     }
 
-//    public ObservableList<Person> getPersons() {
-//        return persons;
-//    }
-//
-//    public ObservableList<Item> getItems() {
-//        return items;
-//    }
     
     public void verwijder(Item item){
-        children.remove(item.getShape());
+        children.remove(item.getNode());
         spatiesdingen.remove(item);
+        /*
+         * to do: ook verwijderen uit world zodat terug naar schrijven 
+         * wrs een verplichte methode maken met string en een hashmap om te weten welke methode op te roepen
+         */
     }
     
     public boolean hitBuilding(double x, double y){
         
-        for (Building rect : buildings){
-            if (x <= rect.getX()+rect.getWidth() && x >= rect.getX() 
-                    && y <= rect.getY()+rect.getHeight() && y >= rect.getY()){
+        for (Building b : buildings){
+            if (b.erTegen(x, y)){
                 return true;
             }
         }
@@ -98,24 +92,6 @@ public class ObjectenOpslag {
         return false;
         
     }
-    
-//    public Person hitBoringPerson(double nx, double ny){
-//        for (Person p : persons){
-//            if(p.hit(nx, ny) ){
-//                return p;
-//            }
-//        }
-//        return null;
-//    }
-//    
-//     public Item onItem(double nx, double ny){
-//        for (Item s : items){
-//            if(s.hit(nx, ny)){
-//                return s;
-//            }
-//        }
-//        return null;
-//    }
     
     public Spatiebaar onSpatiebaarDing(double nx, double ny){
         for (Spatiebaar s : spatiesdingen){

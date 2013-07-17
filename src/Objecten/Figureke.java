@@ -1,9 +1,9 @@
 package Objecten;
 
+import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
 import javax.xml.bind.annotation.XmlAttribute;
-import test2.ActionBenodigdheden;
 
 /**
  *
@@ -17,31 +17,17 @@ public abstract class Figureke {
    private double x;
    private double y;
    private String name;
-   private String vorm;
    private Color fill = Color.BLACK;
 
 
-    public Color getFill() {
-        return fill;
-    }
+   
 
-    protected void setFill(Color fill) {
-        this.fill = fill;
-    }
     
     public abstract Shape getShape();
-
     /*
-     * eventueel eigen vorm kiezen met facotrymap ofzo
+     * veel ruimer als shape + enkel doel is visueel weergeven
      */
-    
-    public String getVorm() {
-        return vorm;
-    }
-
-    public void setVorm(String vorm) {
-        this.vorm = vorm;
-    }
+    public abstract Node getNode();
 
     
     /*
@@ -63,7 +49,13 @@ public abstract class Figureke {
         this.y = y;
     }
 
+    public Color getFill() {
+        return fill;
+    }
 
+    protected void setFill(Color fill) {
+        this.fill = fill;
+    }
 
     
     

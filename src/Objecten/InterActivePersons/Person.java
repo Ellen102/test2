@@ -5,6 +5,7 @@
 package Objecten.InterActivePersons;
 
 import Objecten.Spatiebaar;
+import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
@@ -30,6 +31,11 @@ public abstract class Person extends Spatiebaar{
         }
         return shape;
     }
+   
+    @Override
+   public Node getNode(){
+       return getShape();
+   }
    
     public double getRadius() {
         return radius;
