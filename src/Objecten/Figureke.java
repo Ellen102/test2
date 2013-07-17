@@ -78,13 +78,5 @@ public abstract class Figureke {
     }
     
     
-    /*
-     * kijken of actie heeft
-     */
-    
-    public abstract boolean hasAction();
-    /*
-     * todo: misschien een klasse voor maken
-     */
-    public abstract void doAction(ActionBenodigdheden ab);
+   
 }

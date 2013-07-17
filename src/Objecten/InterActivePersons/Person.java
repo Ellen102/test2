@@ -4,7 +4,7 @@
  */
 package Objecten.InterActivePersons;
 
-import Objecten.Figureke;
+import Objecten.Spatiebaar;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
@@ -13,7 +13,7 @@ import javafx.scene.shape.Shape;
  *
  * @author Ellen
  */
-public abstract class Person extends Figureke{
+public abstract class Person extends Spatiebaar{
     private double radius;
     private Shape shape;
 

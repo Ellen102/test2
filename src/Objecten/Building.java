@@ -46,15 +46,7 @@ public class Building extends Figureke{
         this.width = width;
     }
 
-    @Override
-    public boolean hasAction() {
-        return false;
-    }
 
-    @Override
-    public void doAction(ActionBenodigdheden ab) {
-        throw new RuntimeException("geen actie");
-    }
 
 
 }

@@ -11,7 +11,7 @@ import test2.ActionBenodigdheden;
  *
  * @author Ellen
  */
-public class Item  extends Figureke{
+public class Item  extends Spatiebaar{
    private double height;
    private double width;
    private Shape shape;
