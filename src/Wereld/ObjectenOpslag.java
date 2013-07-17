@@ -3,7 +3,6 @@ package Wereld;
 import Objecten.BoringPerson;
 import Objecten.Building;
 import Objecten.InterActivePersons.ContainsPerson;
-import Objecten.InterActivePersons.Person;
 import Objecten.Item;
 import Objecten.Spatiebaar;
 import java.util.List;
@@ -57,8 +56,6 @@ public class ObjectenOpslag {
             children.add(b.getNode());
         }
         
-        
-        
         for(Item b : w.getItems()){
             spatiesdingen.add(b);
             children.add(b.getNode());
@@ -67,11 +64,6 @@ public class ObjectenOpslag {
 
     }
 
-    public ObservableList<Building> getBuildings() {
-        return buildings;
-    }
-
-    
     public void verwijder(Item item){
         children.remove(item.getNode());
         spatiesdingen.remove(item);
@@ -82,15 +74,12 @@ public class ObjectenOpslag {
     }
     
     public boolean hitBuilding(double x, double y){
-        
         for (Building b : buildings){
             if (b.erTegen(x, y)){
                 return true;
             }
         }
-        
         return false;
-        
     }
     
     public Spatiebaar onSpatiebaarDing(double nx, double ny){

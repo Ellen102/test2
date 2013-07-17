@@ -89,12 +89,16 @@ public class Test2 extends Application {
                         me.verplaats(nx, ny);
                     }
                     label.setText(null);
-                }else if(t.getCode() == KeyCode.SPACE){
                     
+                    
+                }else if(t.getCode() == KeyCode.SPACE){
                     Spatiebaar b = opslag.onSpatiebaarDing(me.getX(),me.getY());
+                    
                     if(b != null && b.hasAction()){
                         b.doAction(ab);
                     }
+                    
+                    
                 }
                 
                 
