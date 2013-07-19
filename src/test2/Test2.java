@@ -6,9 +6,11 @@ import Rugzak.Rugzak;
 import Wereld.ObjectenOpslag;
 import java.util.HashMap;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -65,7 +67,20 @@ public class Test2 extends Application {
         
         ab = new ActionBenodigdheden(label, opslag, rz);
         
-        
+        Button save = new Button();
+        save.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("----");
+                opslag.save();
+                System.out.println("----");
+            }
+        });
+        save.setText("Save");
+        save.setTranslateX(400);
+        save.setTranslateY(20);
+        root.getChildren().add(save);
         
         me = new Me(5.0, 10.0);
         root.getChildren().add(me.getShape());

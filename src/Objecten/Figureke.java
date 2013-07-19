@@ -20,8 +20,13 @@ public abstract class Figureke {
    private Color fill = Color.BLACK;
 
 
-   
+   public Figureke(){
+   }
 
+   /*
+    * weten uit welke lijst te verwijderen ofzo
+    */
+   public abstract String watIsHet();
     
     public abstract Shape getShape();
     /*

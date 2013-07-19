@@ -59,5 +59,10 @@ public class Building extends Figureke{
          return false;
     }
 
+    @Override
+    public String watIsHet() {
+        return "building";
+    }
+
 
 }

@@ -95,4 +95,9 @@ public class ContainsPerson extends InteractivePerson{
       
     }
 
+    @Override
+    public String watIsHet() {
+        return "ContainsPerson";
+    }
+
 }

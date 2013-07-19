@@ -2,9 +2,12 @@ package Wereld;
 
 import Objecten.BoringPerson;
 import Objecten.Building;
+import Objecten.Figureke;
 import Objecten.InterActivePersons.ContainsPerson;
 import Objecten.Item;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -18,10 +21,22 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class World {
     
     private List<Building> buildings;
-    private List<BoringPerson> persons;
+    private List<BoringPerson> boringpersons;
     private List<ContainsPerson> containspersons;
     private List<Item> items;
     
+    private Map<String, List> map;
+    
+    public World(){
+        map = new HashMap<>();
+    }
+    
+    private void voegToe(List l){
+        if(l != null && l.size() > 0){
+        Figureke s = (Figureke) l.get(0);
+        map.put(s.watIsHet(), l);
+        }
+    }
     
     @XmlElementWrapper (name = "buildings")
     @XmlElement (name = "building")
@@ -31,6 +46,7 @@ public class World {
 
     public void setBuildings(List<Building> buildings) {
         this.buildings = buildings;
+        voegToe(buildings);
     }
 
     
@@ -38,11 +54,12 @@ public class World {
     @XmlElementWrapper (name = "boringpersons")
     @XmlElement (name = "boringperson")
     public List<BoringPerson> getPersons() {
-        return persons;
+        return boringpersons;
     }
 
     public void setPersons(List<BoringPerson> persons) {
-        this.persons = persons;
+        this.boringpersons = persons;
+        voegToe(persons);
     }
 
     
@@ -54,6 +71,7 @@ public class World {
 
     public void setContainsPersons(List<ContainsPerson> p) {
         this.containspersons = p;
+        voegToe(p);
     }
 
     
@@ -66,7 +84,14 @@ public class World {
 
     public void setItems(List<Item> items) {
         this.items = items;
+        voegToe(items);
     }
+
+    public void remove(Figureke f) {
+        map.get(f.watIsHet()).remove(f);
+    }
+
+
     
     
 }

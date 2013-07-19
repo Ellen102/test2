@@ -141,4 +141,9 @@ public class Item  extends Spatiebaar{
         ab.getRugzak().add(this);
     }
 
+    @Override
+    public String watIsHet() {
+        return "Item";
+    }
+
 }

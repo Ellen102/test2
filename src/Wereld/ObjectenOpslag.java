@@ -2,15 +2,20 @@ package Wereld;
 
 import Objecten.BoringPerson;
 import Objecten.Building;
+import Objecten.Figureke;
 import Objecten.InterActivePersons.ContainsPerson;
 import Objecten.Item;
 import Objecten.Spatiebaar;
+import java.io.File;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 
 /**
  *
@@ -26,11 +31,12 @@ public class ObjectenOpslag {
     
     private final ObservableList<Building> buildings = FXCollections.observableArrayList();
     private final ObservableList<Spatiebaar> spatiesdingen = FXCollections.observableArrayList();
+    
+    private World w;
 
     public ObjectenOpslag(Group root) {
             this.children=root.getChildren();
             
-        World w;
         try {
             JAXBContext jc = JAXBContext.newInstance(World.class);
             w = (World) jc.createUnmarshaller().unmarshal(ObjectenOpslag.class.getResource("Wereld.xml"));
@@ -67,6 +73,7 @@ public class ObjectenOpslag {
     public void verwijder(Item item){
         children.remove(item.getNode());
         spatiesdingen.remove(item);
+        w.remove((Figureke) item);
         /*
          * to do: ook verwijderen uit world zodat terug naar schrijven 
          * wrs een verplichte methode maken met string en een hashmap om te weten welke methode op te roepen
@@ -89,6 +96,23 @@ public class ObjectenOpslag {
             }
         }
         return null;
+    }
+    
+    public void save(){
+        try {
+            //schrijven
+            // create JAXB context and instantiate marshaller
+            JAXBContext context = JAXBContext.newInstance(World.class);
+            Marshaller m = context.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+
+            // Write to System.out
+            m.marshal(w, System.out);
+            // Write to File
+            //m.marshal(ls, new File("./schrijf.xml"));
+        } catch (JAXBException ex) {
+            System.err.println(ex);
+        }
     }
 
 }

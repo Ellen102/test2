@@ -1,9 +1,6 @@
 package Objecten;
 
 import Objecten.InterActivePersons.Person;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Shape;
 import test2.ActionBenodigdheden;
 
 /**
@@ -34,6 +31,11 @@ public class BoringPerson extends Person {
     @Override
     public void doAction(ActionBenodigdheden ab) {
         ab.getLabel().setText(zin);
+    }
+
+    @Override
+    public String watIsHet() {
+        return "BoringPerson";
     }
     
 }
