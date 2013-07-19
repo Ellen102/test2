@@ -4,6 +4,7 @@ import Objecten.Me;
 import Objecten.Spatiebaar;
 import Rugzak.Rugzak;
 import Wereld.ObjectenOpslag;
+import java.io.File;
 import java.util.HashMap;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -14,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.xml.bind.JAXBException;
 
@@ -52,10 +54,10 @@ public class Test2 extends Application {
     
     private final Group root = new Group();
     @Override
-    public void start(Stage primaryStage) throws JAXBException {
+    public void start(final Stage primaryStage) throws JAXBException {
         primaryStage.setTitle("een");
         
-        opslag = new ObjectenOpslag(root);
+        opslag = new ObjectenOpslag(root, null);
         
         
         label = new Label("Welkom!!!!");
@@ -73,7 +75,15 @@ public class Test2 extends Application {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println("----");
-                opslag.save();
+                 FileChooser fileChooser = new FileChooser();
+
+              
+              //Show save file dialog
+              File file = fileChooser.showSaveDialog(primaryStage);
+              
+              if(file != null){
+                opslag.save(file);
+              }
                 System.out.println("----");
             }
         });

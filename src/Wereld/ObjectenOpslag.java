@@ -8,8 +8,6 @@ import Objecten.Item;
 import Objecten.Spatiebaar;
 import java.io.File;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Group;
@@ -34,12 +32,16 @@ public class ObjectenOpslag {
     
     private World w;
 
-    public ObjectenOpslag(Group root) {
+    public ObjectenOpslag(Group root, File file) {
             this.children=root.getChildren();
             
         try {
             JAXBContext jc = JAXBContext.newInstance(World.class);
+            if(file == null){
             w = (World) jc.createUnmarshaller().unmarshal(ObjectenOpslag.class.getResource("Wereld.xml"));
+            }else{
+            w = (World) jc.createUnmarshaller().unmarshal(file);
+            }
         } catch (JAXBException ex) {
             throw new RuntimeException("JAXB:" + ex);
         } 
@@ -98,7 +100,7 @@ public class ObjectenOpslag {
         return null;
     }
     
-    public void save(){
+    public void save(File location){
         try {
             //schrijven
             // create JAXB context and instantiate marshaller
@@ -109,7 +111,11 @@ public class ObjectenOpslag {
             // Write to System.out
             m.marshal(w, System.out);
             // Write to File
-            //m.marshal(ls, new File("./schrijf.xml"));
+             m.marshal(w, location);
+            /*
+             * http://java-buddy.blogspot.be/2012/05/save-file-with-javafx-filechooser.html
+             */
+
         } catch (JAXBException ex) {
             System.err.println(ex);
         }
